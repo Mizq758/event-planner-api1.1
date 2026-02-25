@@ -1,0 +1,15 @@
+# Config files
+/back/cmd/config.yaml
+/back/cmd/*
+!/back/cmd/config.yaml.example
+
+# Generic
+**/config.yaml
+*.secret.yaml
+.env*
+/config.yaml
+**/config.local.yaml
+**/*.env
+**/secrets/
+**/credentials/
+**/*.secret.*
