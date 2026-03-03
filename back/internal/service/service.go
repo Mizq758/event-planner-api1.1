@@ -7,6 +7,7 @@ import (
     "search-job/internal/events"
     "search-job/internal/models"
     "search-job/internal/participants"
+    "search-job/internal/pkg/external"  // ДОБАВЛЕНО
     "github.com/labstack/echo/v4"
 )
 
@@ -22,6 +23,7 @@ type Service struct {
     eventsRepo      *events.Repo
     authRepo        *auth.Repo
     participantRepo *participants.Repo
+    externalClient  *external.Client  // ДОБАВЛЕНО
 }
 
 func NewService(
@@ -29,12 +31,14 @@ func NewService(
     eventsRepo *events.Repo,
     authRepo *auth.Repo,
     participantRepo *participants.Repo,
+    externalClient *external.Client,  // ДОБАВЛЕНО
 ) *Service {
     return &Service{
         logger:          logger,
         eventsRepo:      eventsRepo,
         authRepo:        authRepo,
         participantRepo: participantRepo,
+        externalClient:  externalClient,  // ДОБАВЛЕНО
     }
 }
 
